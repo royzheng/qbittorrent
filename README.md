@@ -1,6 +1,6 @@
 # QbittorrentClient
 
-A Qbittorrent Web API Client, only support qBittorrent v4.1+.
+A Qbittorrent Web API Client, only support [WebUI API (qBittorrent 4.1+)](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)>).
 
 ## Installation
 
@@ -18,22 +18,74 @@ Or install it yourself as:
 
     $ gem install qbittorrent
 
-## Usage
+# Usage
 
-<a href="https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)" target="_blank">WebUI API (qBittorrent 4.1+)</a>
 ```
 client = QBittorrent::Api.new("http://localhost:8080", "admin", "password")
+```
+
+## Authentication
+
+### **[Login](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)>)**
+
+```
 client.login
 ```
 
-| API | method | Status |
-|:--|:--| :--|
-|<a href="https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#login" target="_blank">Login</a> | login | :white_check_mark: |
-|<a href="https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-application-version" target="_blank">Get application version</a>| get_application_version | :white_check_mark: |
-|<a href="https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-api-version" target="_blank">Get API version</a> | get_api_version | :white_check_mark: |
-|<a href="https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-torrent" target="_blank">Add new torrent</a> | add_torrent | :white_check_mark: |
+### **[Logout](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#logout>)**
 
+```
+client.logout
+```
 
+## Application
+
+### **[Get application version](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-application-version>)**
+
+```
+client.application_version
+```
+
+### **[Get API version](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-api-version>)**
+
+```
+client.api_version
+```
+
+### **[Get build info](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-build-info>)**
+
+```
+client.build_info
+```
+
+### **[Get application preferences](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-application-preferences>)**
+
+```
+client.preferences
+```
+
+### **[Set application preferences](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#set-application-preferences)**
+```
+client.set_preferences(options)
+```
+
+### **[Shutdown application](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#shutdown-application>)**
+
+```
+client.shutdown
+```
+
+### **[Get default save path](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-default-save-path>)**
+
+```
+client.default_save_path
+```
+
+### **[Add new torrent](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-torrent>)**
+
+```
+client.add_torrent(urls_of_file_path, options)
+```
 
 ## License
 

@@ -14,26 +14,17 @@ module QBittorrent
         http
       end
 
-      def prepare_url(path)
-        "#{host}/api/v2#{path}"
-      end
-
-      def send_request(is_json)
+      def send_request(api_path)
+        api_url = "#{host}/api/v2#{api_path}"
         login unless cookies
-        response = yield
+        response = yield(api_url)
         raise QBittorrent::Error, "Response faild #{response.status.code}" unless response.status.success?
 
-        result = response.to_s
-        result = JSON.parse(result) if is_json
-        {
-          status: true,
-          data: result
-        }
+        QBittorrent::WebApi::Response.new(true, response)
+      rescue QBittorrent::Error => e
+        QBittorrent::WebApi::Response.new(false, e.response, e.message)
       rescue StandardError => e
-        {
-          status: false,
-          data: e.message
-        }
+        QBittorrent::WebApi::Response.new(false, response, e.message)
       end
     end
   end

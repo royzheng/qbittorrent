@@ -9,3 +9,5 @@ Metrics/MethodLength:
   Max: 50
 Style/FrozenStringLiteralComment:
   Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false

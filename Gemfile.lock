@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    qbittorrent (0.1.0)
+    qbittorrent (1.0)
       http (~> 4.4.1)
       logger (~> 1.4)
 

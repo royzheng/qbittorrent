@@ -1,13 +1,16 @@
 require 'http'
 require 'logger'
+require 'qbittorrent/web_api/response'
 require 'qbittorrent/web_api/core'
 require 'qbittorrent/web_api/authorize'
+require 'qbittorrent/web_api/app'
 require 'qbittorrent/web_api/torrent'
 
 module QBittorrent
   class Api
     include QBittorrent::WebApi::Core
     include QBittorrent::WebApi::Authroize
+    include QBittorrent::WebApi::App
     include QBittorrent::WebApi::Torrent
 
     attr_accessor :host, :username, :password, :cookies, :logger, :global_options
