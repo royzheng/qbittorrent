@@ -1,0 +1,11 @@
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - qbittorrent.gemspec
+Style/Documentation:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 50
+Style/FrozenStringLiteralComment:
+  Enabled: false
