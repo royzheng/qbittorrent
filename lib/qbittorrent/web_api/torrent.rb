@@ -1,7 +1,13 @@
 module QBittorrent
   module WebApi
     module Torrent
-      def add_torrent(url_or_file_path, **options)
+      def get_torrents(**options)
+        send_request('/torrents/info') do |api_url|
+          api_client.get(api_url, params: options)
+        end
+      end
+
+      def add_torrents(url_or_file_path, **options)
         send_request('/torrents/add') do |api_url|
           url_or_file_path.gsub!(/^\s+|\s+$/, '')
           if %r{^http://|https://|magnet://}i =~ url_or_file_path
@@ -12,6 +18,16 @@ module QBittorrent
           api_client.post(api_url, form: options)
         end
       end
+
+      def delete_torrents(hashes, delete_files = false)
+        send_request("/torrents/delete") do |api_url|
+          api_client.post(api_url, form: {
+            hashes: hashes,
+            deleteFiles: delete_files
+          })
+        end
+      end
     end
   end
 end
+  

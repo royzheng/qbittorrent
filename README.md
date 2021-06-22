@@ -81,10 +81,18 @@ client.shutdown
 client.default_save_path
 ```
 
-### **[Add new torrent](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-torrent>)**
+### **[Get torrent list](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#get-torrent-list)**
+```
+client.get_torrents(options)
+```
+### **[Delete torrents](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#delete-torrents)**
+```
+client.delete_torrents(hashes, delete_files)
+```
+### **[Add new torrents](<https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#add-new-torrent>)**
 
 ```
-client.add_torrent(urls_of_file_path, options)
+client.add_torrents(urls_of_file_path, options)
 ```
 
 ## License
