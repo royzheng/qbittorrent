@@ -95,6 +95,10 @@ client.delete_torrents(hashes, delete_files)
 client.add_torrents(urls_of_file_path, options)
 ```
 
+### **[Reannounce torrents](https://github.com/qbittorrent/qBittorrent/wiki/WebUI-API-(qBittorrent-4.1)#reannounce-torrents)**
+```
+client.reannounce(hashes)
+```
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

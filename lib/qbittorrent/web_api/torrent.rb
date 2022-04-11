@@ -27,6 +27,14 @@ module QBittorrent
           })
         end
       end
+
+      def reannounce(hashes = 'all')
+        send_request("/torrents/reannounce") do |api_url|
+          api_client.post(api_url, form: {
+            hashes: hashes
+          })
+        end
+      end
     end
   end
 end
